@@ -16,6 +16,10 @@ target/
 *.ipr
 *.iml
 *.iws
+.mvn/
+mvnw
+mvnw.cmd
+
 
 # temp ignore
 *.log

@@ -1,0 +1,27 @@
+feign:
+    hystrix:
+        enabled: true
+    client:
+        config:
+          default:
+            #连接超时
+            connect-timeout: 4000
+            #等待超时
+            read-timeout: 5000
+            logger-level: full
+hystrix:
+   command:
+      default:
+          execution:
+             isolation:
+               thread:
+                  timeoutInMilliseconds: 10000
+server:
+    port: 9015
+spring:
+    application:
+        name: microsevices-hystrix-consumer
+    cloud:
+        nacos:
+            discovery:
+                server-addr: 47.95.243.20:8848

@@ -111,6 +111,7 @@
         <module>microservices-provider-9012</module>
         <!--<module>microservices-provider-9012</module>-->
         <module>microservices-consumer</module>
+        <module>microservices-hystrix-9015</module>
         <!--<module>microservices-zuul</module>-->
     </modules>
 
