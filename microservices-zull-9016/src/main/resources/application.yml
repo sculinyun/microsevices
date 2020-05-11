@@ -1,0 +1,25 @@
+server:
+  port: 9016
+spring:
+    application:
+        name: gateway-zull
+    cloud:
+        nacos:
+            discovery:
+                server-addr: 47.95.243.20:8848
+
+#zull的相关设置
+zuul:
+  routes: #给服务配置路由
+    microsevices-provider:
+      path: /helloservice/**
+  ignored-services: microsevices-provider#关闭默认路由配置
+  prefix: /gateway #给网关路由添加前缀
+  sensitive-headers: #配置过滤敏感的请求头信息，设置为空就不会过滤
+  add-host-header: true #设置为true重定向是会添加host请求头
+  retryable: true # 关闭重试机制
+
+ribbon: #全局配置
+  ConnectTimeout: 1000 #服务请求连接超时时间（毫秒）
+  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）
+

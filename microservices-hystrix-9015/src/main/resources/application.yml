@@ -25,3 +25,8 @@ spring:
         nacos:
             discovery:
                 server-addr: 47.95.243.20:8848
+
+
+logging:
+  level:
+    com.damowang.hystrix.provider.api.*: debug
