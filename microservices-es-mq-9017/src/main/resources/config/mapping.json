@@ -1,0 +1,42 @@
+{
+  "commodity": {
+    "properties": {
+      "skuId": {
+        "type": "long"
+      },
+      "commodityName": {
+        "type": "text",
+        "analyzer": "ikSearchAnalyzer",
+        "search_analyzer": "ikSearchAnalyzer",
+        "fields": {
+          "pinyin": {
+            "type": "text",
+            "analyzer": "pinyinSimpleIndexAnalyzer",
+            "search_analyzer": "pinyinSimpleIndexAnalyzer"
+          }
+        }
+      },
+      "category": {
+        "type": "keyword",
+        "ignore_above": 50
+      },
+      "price": {
+        "type": "float"
+      },
+      "brand": {
+        "type": "keyword",
+        "ignore_above": 50
+      },
+      "buildNum": {
+        "type": "long"
+      },
+      "createDate": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+      },
+      "stock": {
+        "type": "long"
+      }
+    }
+  }
+}

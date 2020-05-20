@@ -1,0 +1,21 @@
+{
+  "commodity": {
+    "properties": {
+      "skuId": {
+        "type": "long"
+      },
+      "commodityName": {
+        "type": "text",
+        "analyzer": "ikSearchAnalyzer",
+        "search_analyzer": "ikSearchAnalyzer",
+        "fields": {
+          "pinyin": {
+            "type": "completion",
+            "analyzer": "pinyinSimpleIndexAnalyzer",
+            "search_analyzer": "pinyinSimpleIndexAnalyzer"
+          }
+        }
+      }
+    }
+  }
+}
