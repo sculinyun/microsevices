@@ -27,6 +27,8 @@
         <lombok.version>1.16.8</lombok.version>
         <mysql-connector.version>8.0.15</mysql-connector.version>
         <servlet.version>3.1.0</servlet.version>
+        <seata.version>1.2.0</seata.version>
+        <base.version>2.0.0</base.version>
     </properties>
 
     <repositories>
@@ -40,9 +42,14 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>lykj.base</groupId>
+                <artifactId>core</artifactId>
+                <version>${base.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector.version>}</version>
+                <version>${mysql-connector.version}</version>
             </dependency>
             <!--druid-->
             <dependency>
@@ -99,6 +106,11 @@
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>
@@ -111,6 +123,8 @@
         <module>microservices-hystrix-9015</module>
         <module>microservices-zull-9016</module>
         <module>microservices-es-mq-9017</module>
+        <module>microservices-seata-9018</module>
+        <module>microservices-provider-storage-9019</module>
         <!--<module>microservices-zuul</module>-->
     </modules>
 
